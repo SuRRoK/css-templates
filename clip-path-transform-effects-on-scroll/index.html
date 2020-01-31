@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clip-path Transform Effects on Scroll</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2 class="title">Scroll to see Story</h2>
+    <section></section>
+    <div class="container">
+        <h2>Мария Семенова. Волкодав</h2>
+        <iframe src="text.html">
+            Ваш браузер не поддерживает плавающие фреймы!
+        </iframe>
+<!--        <link rel="import" href="text.html">-->
+    </div>
+    <script>
+        let section = document.querySelector('section');
+        window.addEventListener('scroll', function () {
+            let value = window.scrollY;
+            section.style.clipPath = "circle(" + value + "px at center)";
+        })
+    </script>
+</body>
+</html>
